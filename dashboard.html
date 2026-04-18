@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HelpHub AI - Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+   
+        const userSession = localStorage.getItem('isLoggedIn');
+
+      
+        if (!userSession) {
+            Swal.fire({
+                title: 'Access Denied',
+                text: 'You need to create an account or login first to view your dashboard.',
+                icon: 'warning',
+                confirmButtonColor: '#168B75',
+                confirmButtonText: 'Go to Login',
+                allowOutsideClick: false,
+                background: '#F7F1E5', 
+                color: '#0B231D'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                  
+                    window.location.href = 'login.html';
+                }
+            });
+        }
+    });
+</script>
+    <style>
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background: linear-gradient(135deg, #E9F0EC 0%, #F7F1E5 100%); 
+            color: #0B231D; 
+            min-height: 100vh;
+            padding: 20px;
+            -webkit-font-smoothing: antialiased;
+        }
+
+       
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto 20px auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+
+        .nav-link {
+            font-size: 13px;
+            font-weight: 600;
+            color: #6B7280;
+            transition: color 0.2s;
+        }
+
+        .nav-link:hover { color: #000; }
+
+        .nav-active {
+            background: #D9E5E1;
+            color: #168B75; 
+            padding: 8px 18px;
+            border-radius: 20px;
+            font-weight: 700;
+        }
+
+       
+        .header-section {
+            background-color: #2D3639;
+            border-radius: 40px;
+            padding: 60px 50px;
+            color: white;
+            margin: 0 auto 40px auto;
+            max-width: 1200px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        
+        .form-container {
+            background: white;
+            border-radius: 40px;
+            padding: 40px;
+            box-shadow: 0 4px 30px rgba(0,0,0,0.02);
+            border: 1px solid rgba(0,0,0,0.03);
+        }
+
+        .stat-card {
+            background: white;
+            border-radius: 30px;
+            padding: 30px;
+            border: 1px solid rgba(0,0,0,0.03);
+        }
+
+        label {
+            font-size: 10px;
+            font-weight: 700;
+            color: #8C8C84;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .pill {
+            font-size: 10px;
+            font-weight: 700;
+            padding: 4px 12px;
+            border-radius: 20px;
+            background: #F9F9F7;
+            border: 1px solid #D9E5E1;
+            color: #168B75;
+        }
+
+        .btn-ai {
+            background: #168B75;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        .btn-details {
+            background: white;
+            border: 1px solid #EBEBE6;
+            padding: 8px 18px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="nav-container">
+        <div class="flex items-center gap-2">
+            <a href="index.html" class="bg-[#00A38E] text-white w-8 h-8 rounded-lg flex items-center justify-center font-bold text-sm">H</a>
+            <a href="index.html" class="font-bold text-lg tracking-tight">HelpHub AI</a>
+        </div>
+
+        <div class="nav-links">
+            <div class= "nav-active">Dashboard</div>
+            <a href="explore.html" class="nav-link">Explore</a>
+            <a href="createrequest.html" class="nav-link">Create Request</a>
+            <a href="messeges.html" class="nav-link">Messages</a>
+            <a href="profile.html" class="nav-link">Profile</a>
+        </div>
+
+        <div class="flex items-center gap-4">
+            <a style="cursor: pointer;" href="notification.html" class="nav-link bg-white px-4 py-2 rounded-full border border-gray-100 text-[11px] font-bold text-gray-500 shadow-sm">Notifications</a>
+            <a style="cursor: pointer;" href="AIcenter.html" class="btn-ai">Open AI Center</a>
+        </div>
+    </nav>
+
+    <header class="header-section">
+        <span class="text-[10px] font-bold text-[#168B75] uppercase tracking-widest mb-3 block">Dashboard</span>
+        <h1 class="text-6xl font-bold leading-tight mb-4">Welcome back, Ayesha Khan.</h1>
+        <p class="text-gray-400 text-sm opacity-90 max-w-lg">Your command center for requests, AI insights, helper momentum, and live community activity.</p>
+    </header>
+
+    <section class="max-w-[1200px] mx-auto px-5 grid grid-cols-1 md:grid-cols-4 gap-6 mb-12">
+        <div class="stat-card">
+            <label>Trust Score</label>
+            <div class="text-4xl font-bold">92%</div>
+            <p class="text-[9px] text-gray-400 mt-2">Driven by solved requests and consistent support.</p>
+        </div>
+        <div class="stat-card">
+            <label>Helping</label>
+            <div class="text-4xl font-bold">2</div>
+            <p class="text-[9px] text-gray-400 mt-2">Requests where you are currently listed as a helper.</p>
+        </div>
+        <div class="stat-card">
+            <label>Open Requests</label>
+            <div class="text-4xl font-bold">2</div>
+            <p class="text-[9px] text-gray-400 mt-2">Community requests currently active across the feed.</p>
+        </div>
+        <div class="stat-card">
+            <label>AI Pulse</label>
+            <div class="text-4xl font-bold">1 trends</div>
+            <p class="text-[9px] text-gray-400 mt-2">Trend count detected in the latest request activity.</p>
+        </div>
+    </section>
+
+    <main class="max-w-[1200px] mx-auto px-5 grid grid-cols-1 lg:grid-cols-12 gap-8 pb-20">
+        
+        <div class="lg:col-span-7 space-y-6">
+            <div class="flex justify-between items-end mb-6">
+                <div>
+                    <label>Recent Requests</label>
+                    <h2 class="text-4xl font-bold leading-tight">What the community <br> needs right now</h2>
+                </div>
+                <div class="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center text-[9px] font-bold bg-white text-blue-500 shadow-sm">Go to feed</div>
+            </div>
+
+            <div class="form-container">
+                <div class="flex gap-2 mb-4">
+                    <span class="pill">Web Development</span>
+                    <span class="pill" style="color:#EF4444; border-color:#FEE2E2; background:#FEF2F2">High</span>
+                    <span class="pill">Open</span>
+                </div>
+                <h3 class="font-bold text-xl mb-3">Need help making my portfolio responsive before demo day</h3>
+                <p class="text-sm text-gray-500 mb-10 leading-relaxed">My HTML/CSS portfolio breaks on tablets and I need layout guidance before tomorrow evening.</p>
+                <div class="flex flex-wrap gap-2 mb-8">
+                    <span class="pill">HTML/CSS</span> <span class="pill">Responsive</span> <span class="pill">Portfolio</span>
+                </div>
+                <div class="flex justify-between items-center pt-8 border-t border-gray-50">
+                    <div>
+                        <p class="text-[12px] font-bold">Sara Noor</p>
+                        <p class="text-[10px] text-gray-400">Karachi • 1 helper interested</p>
+                    </div>
+                    <a href="opendetail.html" class="btn-details">Open details</a>
+                </div>
+            </div>
+            <div class="form-container">
+                <div class="flex gap-2 mb-4">
+                    <span class="pill">Web Development</span>
+                    <span class="pill" style="color:#EF4444; border-color:#FEE2E2; background:#FEF2F2">High</span>
+                    <span class="pill">Open</span>
+                </div>
+                <h3 class="font-bold text-xl mb-3">Need help making my portfolio responsive before demo day</h3>
+                <p class="text-sm text-gray-500 mb-10 leading-relaxed">My HTML/CSS portfolio breaks on tablets and I need layout guidance before tomorrow evening.</p>
+                <div class="flex flex-wrap gap-2 mb-8">
+                    <span class="pill">HTML/CSS</span> <span class="pill">Responsive</span> <span class="pill">Portfolio</span>
+                </div>
+                <div class="flex justify-between items-center pt-8 border-t border-gray-50">
+                    <div>
+                        <p class="text-[12px] font-bold">Sara Noor</p>
+                        <p class="text-[10px] text-gray-400">Karachi • 1 helper interested</p>
+                    </div>
+                    <a href="opendetail.html" class="btn-details">Open details</a>
+                </div>
+            </div>
+            
+        </div>
+
+        <div class="lg:col-span-5 space-y-8">
+            <div class="form-container">
+                <label>AI Insights</label>
+                <h4 class="text-2xl font-bold mb-8">Suggested actions for you</h4>
+                <div class="space-y-6 text-[12px] font-semibold">
+                    <div class="flex justify-between border-b border-gray-50 pb-4">
+                        <span class="text-gray-400">Most requested category</span>
+                        <span>Web Development</span>
+                    </div>
+                    <div class="flex justify-between border-b border-gray-50 pb-4">
+                        <span class="text-gray-400">Your strongest trust driver</span>
+                        <span>DesignAlly</span>
+                    </div>
+                    <div class="pt-2">
+                        <span class="text-gray-400 block mb-4">Areas you can mentor in</span>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="pill">HTML/CSS</span> <span class="pill">UI/UX</span> <span class="pill">Figma</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-container">
+                <label>Notifications</label>
+                <div class="space-y-4 mt-6">
+                    <div class="bg-[#F9F9F7] p-5 rounded-3xl flex justify-between items-start">
+                        <p class="text-[11px] font-bold leading-tight">New helper matched to your request</p>
+                        <span class="bg-[#FEE2E2] text-[#EF4444] text-[8px] font-bold px-2 py-1 rounded-full uppercase ml-2">Unread</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+</body>
+</html>

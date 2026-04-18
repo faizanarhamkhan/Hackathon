@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HelpHub AI - Notifications</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background: linear-gradient(135deg, #E9F0EC 0%, #F7F1E5 100%); 
+            color: #0B231D; 
+            min-height: 100vh;
+            padding: 20px;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* NAVIGATION WITH MINIMAL OPTIONS */
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto 20px auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            /* The shadow line effect */
+            border-bottom: 1px solid rgba(0,0,0,0.03);
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+
+        .nav-link {
+            font-size: 13px;
+            font-weight: 600;
+            color: #6B7280;
+            transition: color 0.2s;
+        }
+
+        .nav-link:hover { color: #000; }
+
+        .nav-active {
+            background: #D9E5E1;
+            color: #168B75; /* Matching the teal from your button */
+            padding: 8px 18px;
+            border-radius: 20px;
+            font-weight: 700;
+        }
+
+        /* THEME HEADER BOX */
+        .header-section {
+            background-color: #2D3639;
+            border-radius: 40px;
+            padding: 70px 50px;
+            color: white;
+            margin: 0 auto 40px auto;
+            max-width: 1200px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        /* MAIN NOTIFICATION CONTAINER */
+        .form-container {
+            background: white;
+            border-radius: 45px;
+            padding: 50px;
+            box-shadow: 0 4px 30px rgba(0,0,0,0.02);
+            border: 1px solid rgba(0,0,0,0.03);
+            max-width: 1200px;
+            margin: 0 auto 80px auto;
+        }
+
+        /* NOTIFICATION CARDS */
+        .notification-item {
+            background: #F9F9F7;
+            border: 1px solid #EBEBE6;
+            border-radius: 25px;
+            padding: 25px 35px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        label {
+            font-size: 10px;
+            font-weight: 700;
+            color: #8C8C84;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .pill-status {
+            font-size: 11px;
+            font-weight: 700;
+            padding: 6px 20px;
+            border-radius: 20px;
+            background: white;
+            border: 1px solid #EBEBE6;
+            color: #0B231D;
+        }
+
+        .unread-text {
+            color: #EF4444; /* Alert red from your previous styles */
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="nav-container">
+        <div class="flex items-center gap-3">
+            <a href="index.html" class="bg-[#00A38E] text-white w-8 h-8 rounded-lg flex items-center justify-center font-bold text-sm">H</a>
+            <a href="index.html" class="font-bold text-lg tracking-tight">HelpHub AI</a>
+        </div>
+
+        <div class="nav-links">
+            <a href="dashboard.html" class="nav-link">Dashboard</a>
+            <a href="explore.html" class="nav-link">Explore</a>
+            <div class="nav-active">Notifications</div>
+        </div>
+    </nav>
+
+    <header class="header-section">
+        <label style="color: #168B75;">Notifications</label>
+        <h1 class="text-5xl font-bold leading-tight mb-5 tracking-tight">
+            Stay updated on requests, helpers,<br>and trust signals.
+        </h1>
+        <p class="text-gray-400 text-sm opacity-90 max-w-lg">
+            Track new matches, solved items, AI insights, and reputation changes in one place.
+        </p>
+    </header>
+
+    <main class="form-container">
+        <label style="color: #168B75;">Live Updates</label>
+        <h2 class="text-4xl font-bold mb-10 tracking-tight">Notification feed</h2>
+
+        <div class="space-y-4">
+            <div class="notification-item">
+                <div>
+                    <h3 class="font-bold text-lg">New helper matched to your responsive portfolio request</h3>
+                    <p class="text-xs text-gray-400 font-semibold mt-1">Match • 12 min ago</p>
+                </div>
+                <span class="pill-status unread-text">Unread</span>
+            </div>
+
+            <div class="notification-item">
+                <div>
+                    <h3 class="font-bold text-lg">Your trust score increased after a solved request</h3>
+                    <p class="text-xs text-gray-400 font-semibold mt-1">Reputation • 1 hr ago</p>
+                </div>
+                <span class="pill-status unread-text">Unread</span>
+            </div>
+
+            <div class="notification-item">
+                <div>
+                    <h3 class="font-bold text-lg">AI Center detected rising demand for interview prep</h3>
+                    <p class="text-xs text-gray-400 font-semibold mt-1">Insight • Today</p>
+                </div>
+                <span class="pill-status">Read</span>
+            </div>
+        </div>
+    </main>
+
+</body>
+</html>

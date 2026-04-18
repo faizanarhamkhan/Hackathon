@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HelpHub AI - Login</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <script>
+       function loginUser() {
+    localStorage.setItem('isLoggedIn', 'true');
+    
+    window.location.href = 'dashboard.html';
+}
+    </script>
+    <style>
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background: linear-gradient(135deg, #E9F0EC 0%, #F7F1E5 100%); 
+            color: #0B231D; 
+            min-height: 100vh;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            width: 100%;
+            margin: 0 auto 40px auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            border-bottom: 1px solid rgba(0,0,0,0.03);
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+
+        .nav-link {
+            font-size: 13px;
+            font-weight: 600;
+            color: #6B7280;
+            transition: color 0.2s;
+        }
+
+       
+        .access-panel {
+            background-color: #0B231D;
+            border-radius: 40px;
+            padding: 60px 50px;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .auth-card {
+            background: white;
+            border-radius: 40px;
+            padding: 60px 50px;
+            box-shadow: 0 4px 30px rgba(0,0,0,0.02);
+            border: 1px solid rgba(0,0,0,0.03);
+        }
+
+        label {
+            font-size: 10px;
+            font-weight: 700;
+            color: #168B75;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 12px;
+            display: block;
+        }
+
+       
+        .input-field {
+            width: 100%;
+            padding: 14px 20px;
+            border-radius: 15px;
+            background: white;
+            border: 1px solid #EBEBE6;
+            font-size: 14px;
+            margin-bottom: 20px;
+            color: #0B231D;
+        }
+
+        .btn-continue {
+            background: #00A38E;
+            color: white;
+            width: 100%;
+            padding: 16px;
+            border-radius: 35px;
+            font-weight: 700;
+            font-size: 15px;
+            margin-top: 10px;
+            transition: background 0.2s;
+        }
+
+        .btn-continue:hover {
+            background: #008f7d;
+        }
+
+        ul li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 12px;
+            font-size: 14px;
+            color: #D1D5DB;
+        }
+
+        ul li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #168B75;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="nav-container">
+        <div class="flex items-center gap-3">
+            <a href="index.html" class="bg-[#00A38E] text-white w-8 h-8 rounded-lg flex items-center justify-center font-bold text-sm">H</a>
+            <a href="index.html" class="font-bold text-lg tracking-tight">HelpHub AI</a>
+        </div>
+
+        <div class="nav-links">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="explore.html" class="nav-link">Explore</a>
+            <a href="leaderboard.html" class="nav-link">Leaderboard</a>
+        </div>
+    </nav>
+
+    <main class="max-w-[1100px] w-full mx-auto grid grid-cols-1 lg:grid-cols-2 gap-6 flex-grow items-center">
+        
+        <section class="access-panel min-h-[500px]">
+            <label>Community Access</label>
+            <h1 class="text-6xl font-bold leading-tight mb-8 tracking-tight">
+                Enter the support network.
+            </h1>
+            <p class="text-gray-400 text-sm mb-10 leading-relaxed">
+                Choose a demo identity, set your role, and jump into a multi-page product flow designed for asking, offering, and tracking help with a premium interface.
+            </p>
+            <ul>
+                <li>Role-based entry for Need Help, Can Help, or Both</li>
+                <li>Direct path into dashboard, requests, AI Center, and community feed</li>
+                <li>Persistent demo session powered by LocalStorage</li>
+            </ul>
+        </section>
+
+        <section class="auth-card">
+            <label>Login / Signup</label>
+            <h2 class="text-5xl font-bold mb-10 tracking-tight">Authenticate your community profile</h2>
+            
+            <form onsubmit="return false;">
+                <label style="color: #6B7280;">Select demo user</label>
+                <select class="input-field appearance-none" style="background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%230B231D%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpolyline%20points%3D%226%209%2012%2015%2018%209%22%3E%3C%2Fpolyline%3E%3C%2Fsvg%3E'); background-repeat: no-repeat; background-position: right 15px center; background-size: 18px;">
+                    <option>Ayesha Khan</option>
+                    <option>Hassan Ali</option>
+                    <option>Sara Noor</option>
+                </select>
+
+                <label style="color: #6B7280;">Role selection</label>
+                <select class="input-field appearance-none" style="background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%230B231D%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpolyline%20points%3D%226%209%2012%2015%2018%209%22%3E%3C%2Fpolyline%3E%3C%2Fsvg%3E'); background-repeat: no-repeat; background-position: right 15px center; background-size: 18px;">
+                    <option>Both</option>
+                    <option>Need Help</option>
+                    <option>Can Help</option>
+                </select>
+
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <label style="color: #6B7280;">Email</label>
+                        <input type="email" class="input-field" value="community@helphub.ai">
+                    </div>
+                    <div>
+                        <label style="color: #6B7280;">Password</label>
+                        <input type="password" class="input-field" value="••••••••">
+                    </div>
+                </div>
+
+                <button class="btn-continue" onclick="loginUser()">Continue to dashboard</button>
+            </form>
+        </section>
+    </main>
+
+</body>
+</html>

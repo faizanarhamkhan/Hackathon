@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HelpHub AI - Explore</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background: linear-gradient(135deg, #E9F0EC 0%, #F7F1E5 100%); 
+            color: #0B231D; 
+            min-height: 100vh;
+            padding: 20px;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* MINIMAL NAV BAR WITH SHADOW LINE */
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto 20px auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            border-bottom: 1px solid rgba(0,0,0,0.03);
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+
+        .nav-link {
+            font-size: 13px;
+            font-weight: 600;
+            color: #6B7280;
+            transition: color 0.2s;
+        }
+
+        .nav-link:hover { color: #000; }
+
+        .nav-active {
+            background: #D9E5E1;
+            color: #168B75;
+            padding: 8px 18px;
+            border-radius: 20px;
+            font-weight: 700;
+        }
+
+        /* THEME HEADER BOX */
+        .header-section {
+            background-color: #2D3639;
+            border-radius: 40px;
+            padding: 60px 50px;
+            color: white;
+            margin: 0 auto 40px auto;
+            max-width: 1200px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        label {
+            font-size: 10px;
+            font-weight: 700;
+            color: #8C8C84;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        /* EXPLORE LAYOUT CONTAINERS */
+        .sidebar-card {
+            background: white;
+            border-radius: 35px;
+            padding: 40px;
+            box-shadow: 0 4px 30px rgba(0,0,0,0.02);
+            border: 1px solid rgba(0,0,0,0.03);
+        }
+
+        .request-card {
+            background: white;
+            border-radius: 30px;
+            padding: 35px;
+            margin-bottom: 20px;
+            border: 1px solid rgba(0,0,0,0.03);
+        }
+
+        /* FORM ELEMENTS */
+        .filter-select {
+            width: 100%;
+            padding: 15px 20px;
+            border-radius: 15px;
+            background: #F9F9F7;
+            border: 1px solid #EBEBE6;
+            font-size: 13px;
+            font-weight: 500;
+            appearance: none;
+            margin-bottom: 25px;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%230B231D'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 15px center;
+            background-size: 15px;
+        }
+
+        .pill {
+            font-size: 10px;
+            font-weight: 700;
+            padding: 4px 12px;
+            border-radius: 20px;
+            background: #F9F9F7;
+            border: 1px solid #D9E5E1;
+            color: #168B75;
+        }
+
+        .btn-details {
+            background: white;
+            border: 1px solid #EBEBE6;
+            padding: 10px 22px;
+            border-radius: 25px;
+            font-size: 12px;
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="nav-container">
+        <div class="flex items-center gap-3">
+            <a href="index.html" class="bg-[#00A38E] text-white w-8 h-8 rounded-lg flex items-center justify-center font-bold text-sm">H</a>
+            <a href="index.html" class="font-bold text-lg tracking-tight">HelpHub AI</a>
+        </div>
+
+        <div class="nav-links">
+            <a href="dashboard.html" class="nav-link">Dashboard</a>
+            <div class="nav-active">Explore</div>
+            <a href="leaderboard.html" class="nav-link">Leaderboard</a>
+            <a href="notification.html" class="nav-link">Notifications</a>
+        </div>
+    </nav>
+
+    <header class="header-section">
+        <label style="color: #168B75;">Explore / Feed</label>
+        <h1 class="text-6xl font-bold leading-tight mb-5 tracking-tight">
+            Browse help requests with filterable<br>community context.
+        </h1>
+        <p class="text-gray-400 text-sm opacity-90 max-w-lg">
+            Filter by category, urgency, skills, and location to surface the best matches.
+        </p>
+    </header>
+
+    <main class="max-w-[1200px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 pb-20">
+        
+        <aside class="lg:col-span-4">
+            <div class="sidebar-card">
+                <label style="color: #168B75;">Filters</label>
+                <h2 class="text-4xl font-bold mb-10 tracking-tight">Refine the feed</h2>
+                
+                <label>Category</label>
+                <select class="filter-select">
+                    <option>All categories</option>
+                </select>
+
+                <label>Urgency</label>
+                <select class="filter-select">
+                    <option>All urgency levels</option>
+                </select>
+
+                <label>Skills</label>
+                <div class="bg-[#F9F9F7] border border-[#EBEBE6] rounded-2xl p-4 min-h-[80px] mb-6 text-sm text-gray-400 font-medium">
+                    React, Figma, Git/GitHub
+                </div>
+
+                <label>Location</label>
+                <div class="bg-[#F9F9F7] border border-[#EBEBE6] rounded-2xl p-4 min-h-[80px] text-sm text-gray-400 font-medium">
+                    Karachi, Lahore, Remote
+                </div>
+            </div>
+        </aside>
+
+        <section class="lg:col-span-8">
+            <div class="request-card">
+                <div class="flex gap-2 mb-4">
+                    <span class="pill">Web Development</span>
+                    <span class="pill" style="color:#EF4444; border-color:#FEE2E2; background:#FEF2F2">High</span>
+                    <span class="pill">Open</span>
+                </div>
+                <h3 class="font-bold text-xl mb-3">Need help making my portfolio responsive before demo day</h3>
+                <p class="text-sm text-gray-500 mb-6 leading-relaxed">My HTML/CSS portfolio breaks on tablets and I need layout guidance before tomorrow evening.</p>
+                <div class="flex flex-wrap gap-2 mb-8">
+                    <span class="pill">HTML/CSS</span> <span class="pill">Responsive</span> <span class="pill">Portfolio</span>
+                </div>
+                <div class="flex justify-between items-center pt-6 border-t border-gray-50">
+                    <div class="text-[12px] font-bold">Sara Noor <span class="text-gray-400 font-medium ml-2">Karachi • 1 helper interested</span></div>
+                    <button class="btn-details">Open details</button>
+                </div>
+            </div>
+
+            <div class="request-card">
+                <div class="flex gap-2 mb-4">
+                    <span class="pill">Design</span>
+                    <span class="pill" style="color:#F59E0B; border-color:#FEF3C7; background:#FFFBEB">Medium</span>
+                    <span class="pill">Open</span>
+                </div>
+                <h3 class="font-bold text-xl mb-3">Looking for Figma feedback on a volunteer event poster</h3>
+                <p class="text-sm text-gray-500 mb-6 leading-relaxed">I have a draft poster for a campus community event and want sharper hierarchy, spacing, and CTA copy.</p>
+                <div class="flex flex-wrap gap-2 mb-8">
+                    <span class="pill">Figma</span> <span class="pill">Poster</span> <span class="pill">Design Review</span>
+                </div>
+                <div class="flex justify-between items-center pt-6 border-t border-gray-50">
+                    <div class="text-[12px] font-bold">Ayesha Khan <span class="text-gray-400 font-medium ml-2">Lahore • 1 helper interested</span></div>
+                    <button class="btn-details">Open details</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+</body>
+</html>

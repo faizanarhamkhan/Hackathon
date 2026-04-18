@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HelpHub AI - Messages</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background: linear-gradient(135deg, #E9F0EC 0%, #F7F1E5 100%); 
+            color: #0B231D; 
+            min-height: 100vh;
+            padding: 20px;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* NAVIGATION WITH SHADOW LINE */
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto 20px auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            border-bottom: 1px solid rgba(0,0,0,0.03);
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+
+        .nav-link {
+            font-size: 13px;
+            font-weight: 600;
+            color: #6B7280;
+            transition: color 0.2s;
+        }
+
+        .nav-link:hover { color: #000; }
+
+        .nav-active {
+            background: #D9E5E1;
+            color: #168B75;
+            padding: 8px 18px;
+            border-radius: 20px;
+            font-weight: 700;
+        }
+
+        /* THEME HEADER BOX */
+        .header-section {
+            background-color: #2D3639;
+            border-radius: 40px;
+            padding: 60px 50px;
+            color: white;
+            margin: 0 auto 40px auto;
+            max-width: 1200px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        label {
+            font-size: 10px;
+            font-weight: 700;
+            color: #168B75;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        /* CONTENT CONTAINERS */
+        .stream-card {
+            background: white;
+            border-radius: 40px;
+            padding: 40px;
+            box-shadow: 0 4px 30px rgba(0,0,0,0.02);
+            border: 1px solid rgba(0,0,0,0.03);
+        }
+
+        .message-item {
+            background: white;
+            border: 1px solid #EBEBE6;
+            border-radius: 25px;
+            padding: 25px;
+            margin-bottom: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        /* FORM ELEMENTS */
+        .input-field {
+            width: 100%;
+            padding: 15px 20px;
+            border-radius: 15px;
+            background: white;
+            border: 1px solid #EBEBE6;
+            font-size: 13px;
+            margin-bottom: 20px;
+        }
+
+        .text-area {
+            min-height: 120px;
+            resize: none;
+        }
+
+        .btn-send {
+            background: #168B75;
+            color: white;
+            width: 100%;
+            padding: 15px;
+            border-radius: 30px;
+            font-weight: 700;
+            transition: opacity 0.2s;
+        }
+
+        .time-badge {
+            background: #D9E5E1;
+            color: #168B75;
+            font-size: 11px;
+            font-weight: 700;
+            padding: 10px;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            line-height: 1;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="nav-container">
+        <div class="flex items-center gap-3">
+            <a href="index.html" class="bg-[#00A38E] text-white w-8 h-8 rounded-lg flex items-center justify-center font-bold text-sm">H</a>
+            <a href="index.html" class="font-bold text-lg tracking-tight">HelpHub AI</a>
+        </div>
+
+        <div class="nav-links">
+            <a href="dashboard.html" class="nav-link">Dashboard</a>
+            <a href="explore.html" class="nav-link">Explore</a>
+            <div class="nav-active">Messages</div>
+            <a href="notifications.html" class="nav-link">Notifications</a>
+        </div>
+    </nav>
+
+    <header class="header-section">
+        <label>Interaction / Messaging</label>
+        <h1 class="text-6xl font-bold leading-tight mb-5 tracking-tight">
+            Keep support moving through direct communication.
+        </h1>
+        <p class="text-gray-400 text-sm opacity-90 max-w-lg">
+            Basic messaging gives helpers and requesters a clear follow-up path once a match happens.
+        </p>
+    </header>
+
+    <main class="max-w-[1200px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 pb-20">
+        
+        <section class="lg:col-span-7 stream-card">
+            <label>Conversation Stream</label>
+            <h2 class="text-4xl font-bold mb-10 tracking-tight">Recent messages</h2>
+            
+            <div class="message-item">
+                <div class="max-w-[80%]">
+                    <p class="font-bold text-lg mb-2">Ayesha Khan — Sara Noor</p>
+                    <p class="text-sm text-gray-500 leading-relaxed">
+                        I checked your portfolio request. Share the breakpoint screenshots and I can suggest fixes.
+                    </p>
+                </div>
+                <div class="time-badge">
+                    <span>09:45</span>
+                    <span class="text-[8px]">AM</span>
+                </div>
+            </div>
+
+            <div class="message-item">
+                <div class="max-w-[80%]">
+                    <p class="font-bold text-lg mb-2">Hassan Ali — Ayesha Khan</p>
+                    <p class="text-sm text-gray-500 leading-relaxed">
+                        Your event poster concept is solid. I would tighten the CTA and reduce the background texture.
+                    </p>
+                </div>
+                <div class="time-badge">
+                    <span>11:10</span>
+                    <span class="text-[8px]">AM</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="lg:col-span-5 stream-card" style="background: #F7F1E5;">
+            <label>Send Message</label>
+            <h2 class="text-4xl font-bold mb-10 tracking-tight">Start a conversation</h2>
+            
+            <label style="color: #6B7280;">To</label>
+            <select class="input-field appearance-none" style="background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%230B231D%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpolyline%20points%3D%226%209%2012%2015%2018%209%22%3E%3C%2Fpolyline%3E%3C%2Fsvg%3E'); background-repeat: no-repeat; background-position: right 15px center; background-size: 18px;">
+                <option>Ayesha Khan</option>
+                <option>Sara Noor</option>
+                <option>Hassan Ali</option>
+            </select>
+
+            <label style="color: #6B7280;">Message</label>
+            <textarea class="input-field text-area" placeholder="Share support details, ask for files, or suggest next steps."></textarea>
+
+            <button class="btn-send">Send</button>
+        </section>
+    </main>
+
+</body>
+</html>
